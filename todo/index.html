@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+    <title>AngularJS • TodoMVC</title>
+    <link rel="stylesheet" href="base.css">
+</head>
+<body ng-app="todomvc">
+
+<section todo-list id="todoapp">
+    <header id="header">
+        <h1>todos</h1>
+        <form id="todo-form" ng-submit="addTodo()">
+            <input id="new-todo" placeholder="What needs to be done?" ng-model="newTodo">
+        </form>
+    </header>
+    <section id="main" ng-if="todos.length">
+        <ul id="todo-list">
+            <todo-item ng-repeat="item in todos" todo='item' remove="removeTodo(item)"></todo-item>
+
+        </ul>
+    </section>
+</section>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

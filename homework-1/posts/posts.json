@@ -1,0 +1,40 @@
+{
+  "80463134" : {
+    "height" : 351,
+    "width" : 624,
+    "href" : "http://news.bbcimg.co.uk/media/images/80463000/jpg/_80463134_80028924.jpg",
+    "caption" : "King Abdullah had been suffering from a lung infection",
+    "altText" : "Saudi King Abdullah speaks at his private residence in the Red Sea city of in Jeddah, Saudi Arabia. 27 June 2014",
+    "positionHint" : "full-width",
+    "copyrightHolder" : "AP",
+    "originCode" : "mcs"
+  },
+  "78585627" : {
+    "height" : 351,
+    "width" : 624,
+    "href" : "http://news.bbcimg.co.uk/media/images/78585000/jpg/_78585627_253d6c3f-aeb1-46ad-94c1-2a2128bb6754.jpg",
+    "caption" : "King Salman has succeeded Abdullah",
+    "altText" : "Saudi Crown Prince Salman (02/09/14)",
+    "positionHint" : "full-width",
+    "copyrightHolder" : "AP",
+    "originCode" : "mcs"
+  },
+  "80465844" : {
+    "height" : 126,
+    "width" : 224,
+    "href" : "http://news.bbcimg.co.uk/media/images/80465000/jpg/_80465844_80465843.jpg",
+    "caption" : "Abdulaziz Al-Saud",
+    "altText" : "Then Crown Prince Salman bin Abdulaziz Al-Saud, 6 January 2015",
+    "copyrightHolder" : "AFP",
+    "originCode" : "mcs"
+  },
+  "80465847" : {
+    "height" : 282,
+    "width" : 226,
+    "href" : "http://news.bbcimg.co.uk/media/images/80465000/jpg/_80465847_80465846.jpg",
+    "caption" : "Abdulaziz Al-Saud",
+    "altText" : "Then Crown Prince Salman bin Abdulaziz Al-Saud, 6 January 2015",
+    "copyrightHolder" : "AFP",
+    "originCode" : "mcs"
+  }
+}

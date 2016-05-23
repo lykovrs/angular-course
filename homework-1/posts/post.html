@@ -1,0 +1,16 @@
+<div class="row" ng-repeat="post in posts">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="thumbnail">
+      <img ng-src="{{post.href}}" alt="...">
+      <div class="caption">
+        <h3>{{post.caption}}</h3>
+        <p>Copyright: {{post.copyrightHolder}}</p>
+        <p ng-init="isActive = false" ng-class="{'hide': !isActive, 'show': isActive}">{{post.altText}}</p>
+        <p>
+          <button class="btn btn-primary" role="button" ng-click="isActive = !isActive">More</button> 
+          <button class="btn btn-default" role="button" ng-click="deleteItem(post, posts)">Delete</button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col-md-6">
+      <!-- usercard -->
+      <div class="panel panel-info" ng-repeat="user in users">
+        <div class="panel-heading">
+          <div class="media">
+            <div class="media-left">
+              <a href="#">
+                <img class="media-object" ng-src="{{user.avatarUrl}}" alt="{{user.fullName}}">
+              </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">{{user.fullName}}</h4>
+            </div>
+          </div>
+        
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class=" col-md-9 col-lg-9 ">
+              <table class="table table-user-information">
+                <tbody>
+                  <tr>
+                    <td>Дата рождения</td>
+                    <td>{{user.birthdate}}</td>
+                  </tr>
+                  <tr>
+                    <td>Пол</td>
+                    <td>{{user.gender}}</td>
+                  </tr>
+                  <tr>
+                    <td>Адрес</td>
+                    <td>{{user.address}}</td>
+                  </tr>
+                  <tr>
+                    <td>Email</td>
+                    <td>
+                      <user-email></user-email>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ...usercard -->
+    </div>
+  </div>

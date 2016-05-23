@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="newApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Карточки пользователей</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="row">
+    <div class="col-md-6">
+        <user-form list="users"></user-form>
+    </div>
+</div>
+
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js'></script>
+<script>
+    var app = angular.module('newApp', []);
+
+    app.controller("UsersCtrl", function ($scope, $http) {
+        $http.get('users.json').then(function (res) {
+            $scope.users = res.data;
+        });
+    });
+
+    app.component('userForm', {
+        bindings: {},
+        templateUrl: 'userForm.html',
+        controller: "UsersCtrl"
+    });
+
+    app.component('userData', {
+        bindings: {
+            data: "="
+        },
+        templateUrl: 'userData.html'
+    });
+
+    app.component('userEmail', {
+        bindings: {
+            link: '='
+        },
+        template: `<a ng-href="mailto:{{$ctrl.link}}">{{$ctrl.link}}</a>`
+    });
+
+
+    app.component('userAvatar', {
+        bindings: {
+            src: '@',
+            alt: '@',
+            href: '@'
+        },
+        template: `<a href="{{$ctrl.href}}">
+                <img class="media-object" ng-src="{{$ctrl.src}}" alt="{{$ctrl.alt}}">
+              </a>`
+    });
+</script>
+</body>
+</html>
+
+

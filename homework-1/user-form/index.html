@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="newApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Карточки пользователей</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<user-form></user-form>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js'></script>
+<script>
+  var app = angular.module('newApp', []);
+  
+  app.controller("UsersCtrl", function($scope, $http){
+    $http.get('users.json').then(function(res){
+      $scope.users = res.data;
+    });
+  });
+  
+  app.directive('userForm', () => {
+   return {
+     restrict: 'AE',
+     templateUrl: 'userForm.html',
+     controller: "UsersCtrl",
+     link: (scope) => {
+     
+     }
+   }
+ });
+ app.directive('userEmail', () => {
+   return {
+     restrict: 'E',
+     templateUrl: 'userEmail.html'
+   }
+ });
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Карточки пользователей</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body ng-app="postsApp">
+    <div class="container">
+      <post-news></post-news>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script>
+        let app = angular.module('postsApp', []);
+        
+        app.controller("PostCtrl", function($scope, $http){
+          $http.get('posts.json').then(function(res){
+            $scope.posts = res.data;
+          });
+        });
+        
+        app.directive('postNews', () => {
+         return {
+             restrict: 'AE',
+             templateUrl: 'post.html',
+             controller: "PostCtrl",
+             link: (scope) => {
+               scope.toggle = false;
+               scope.deleteItem = (post, posts) => {
+                 for (var key in posts) {
+                   if(posts[key] == post) delete posts[key];
+                  }
+               };
+       
+             }
+           }
+         });
+    </script>
+  </body>
+</html>
