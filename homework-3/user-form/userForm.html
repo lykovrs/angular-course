@@ -1,0 +1,22 @@
+<!-- usercard -->
+<div class="panel panel-info" ng-repeat="user in $ctrl.users">
+    <div class="panel-heading">
+        <div class="media">
+            <div class="media-left">
+                <user-avatar href="https://ya.ru" src="{{user.avatarUrl}}" alt="Альтернативный текст"></user-avatar>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">{{user.fullName}}</h4>
+
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class=" col-md-9 col-lg-9 ">
+                <user-data data="user"></user-data>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ...usercard -->

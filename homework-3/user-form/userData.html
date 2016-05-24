@@ -1,0 +1,22 @@
+<table class="table table-user-information">
+    <tbody>
+    <tr>
+        <td>Дата рождения</td>
+        <td>{{$ctrl.data.birthdate}}</td>
+    </tr>
+    <tr>
+        <td>Пол</td>
+        <td>{{$ctrl.data.gender}}</td>
+    </tr>
+    <tr>
+        <td>Адрес</td>
+        <td>{{$ctrl.data.address}}</td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td>
+            <user-email link="$ctrl.data.email"></user-email>
+        </td>
+    </tr>
+    </tbody>
+</table>
