@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="newApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Конвертер валют</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container">
+<div class="row">
+    <div class="col-md-6">
+        <converter courses="courses">
+        </converter>
+    </div>
+</div>
+
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js'></script>
+<script>
+    var app = angular.module('newApp', []);
+
+    app.service('courseService', function ($http) {
+        this.getCourses = () => {
+            return $http.get('https://query.yahooapis.com/v1/public/yql?q=select+*+from+yahoo.finance.xchange+where+pair+=+%22USDRUB,EURRUB%22&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=').then(response =>{
+                return response.data;
+            });
+
+
+        }
+    });
+
+    app.component('converter', {
+        templateUrl: 'converter.html',
+        controller: function (courseService) {
+            this.courses = [];
+            courseService.getCourses().then(courses => {
+                this.courses = courses;
+                this.course = this.courses.query.results.rate[0].Rate;
+                this.getValue = () => {
+                    console.log(this.course);
+                }
+            });
+
+
+        }
+    });
+
+</script>
+</body>
+</html>
+
+
