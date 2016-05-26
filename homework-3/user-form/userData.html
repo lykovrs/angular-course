@@ -1,16 +1,25 @@
 <table class="table table-user-information">
     <tbody>
     <tr>
-        <td>Дата рождения</td>
-        <td>{{$ctrl.data.birthdate}}</td>
+        <td>Полное имя</td>
+        <td>{{$ctrl.data.name}}</td>
     </tr>
     <tr>
-        <td>Пол</td>
-        <td>{{$ctrl.data.gender}}</td>
+        <td>Номер телефона</td>
+        <td>{{$ctrl.data.phone}}</td>
+    </tr>
+    <tr>
+        <td>Сайт</td>
+        <td>{{$ctrl.data.website}}</td>
     </tr>
     <tr>
         <td>Адрес</td>
-        <td>{{$ctrl.data.address}}</td>
+        <td>
+            <p>Город: {{$ctrl.data.address.city}}</p>
+            <p>Улица: {{$ctrl.data.address.street}}</p>
+            <p>Дом: {{$ctrl.data.address.suite}}</p>
+            <p>Почтовый индекс: {{$ctrl.data.address.zipcode}}</p>
+        </td>
     </tr>
     <tr>
         <td>Email</td>

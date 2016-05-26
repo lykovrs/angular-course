@@ -5,11 +5,10 @@
     <title>Карточки пользователей</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="container">
 <div class="row">
     <div class="col-md-6">
         <user-form list="users">
-            {{1+1}}
         </user-form>
     </div>
 </div>
@@ -21,7 +20,7 @@
     app.service('userService', function ($http) {
 
         this.getUsers = () => {
-            return $http.get('users.json').then(response =>{
+            return $http.get('http://jsonplaceholder.typicode.com/users').then(response =>{
                 return response.data;
             });
         }
@@ -49,18 +48,6 @@
             link: '='
         },
         template: `<a ng-href="mailto:{{$ctrl.link}}">{{$ctrl.link}}</a>`
-    });
-
-
-    app.component('userAvatar', {
-        bindings: {
-            src: '@',
-            alt: '@',
-            href: '@'
-        },
-        template: `<a href="{{$ctrl.href}}">
-                <img class="media-object" ng-src="{{$ctrl.src}}" alt="{{$ctrl.alt}}">
-              </a>`
     });
 </script>
 </body>
