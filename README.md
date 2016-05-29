@@ -1,4 +1,4 @@
 # angular-course
 
-ДЗ 3
-Карточки пользователей http://lykovrs.github.io/angular-course/homework-3/user-form/index.html
+ДЗ1: ковертер валют, сервис конвертации.
+ДЗ2 Карточки пользователей http://lykovrs.github.io/angular-course/homework-3/user-form/index.html
